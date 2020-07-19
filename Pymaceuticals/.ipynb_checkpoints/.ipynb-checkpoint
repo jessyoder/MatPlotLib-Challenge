@@ -14,7 +14,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [
     {
@@ -124,7 +124,7 @@
        "4           32.997729                 1  "
       ]
      },
-     "execution_count": 26,
+     "execution_count": 1,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -134,7 +134,6 @@
     "import matplotlib.pyplot as plt\n",
     "import pandas as pd\n",
     "import scipy.stats as st\n",
-    "import numpy as np\n",
     "\n",
     "# Study data files\n",
     "mouse_metadata_path = \"data/Mouse_metadata.csv\"\n",
@@ -154,7 +153,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [
     {
@@ -163,7 +162,7 @@
        "1893"
       ]
      },
-     "execution_count": 27,
+     "execution_count": 2,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -176,7 +175,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -187,7 +186,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -197,7 +196,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -207,7 +206,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [
     {
@@ -216,7 +215,7 @@
        "249"
       ]
      },
-     "execution_count": 31,
+     "execution_count": 6,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -235,124 +234,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 53,
+   "execution_count": 7,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>mean</th>\n",
-       "      <th>median</th>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Drug Regimen</th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>Capomulin</th>\n",
-       "      <td>40.675741</td>\n",
-       "      <td>41.557809</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Ceftamin</th>\n",
-       "      <td>52.591172</td>\n",
-       "      <td>51.776157</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Infubinol</th>\n",
-       "      <td>52.884795</td>\n",
-       "      <td>51.820584</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Ketapril</th>\n",
-       "      <td>55.235638</td>\n",
-       "      <td>53.698743</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Naftisol</th>\n",
-       "      <td>54.331565</td>\n",
-       "      <td>52.509285</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Placebo</th>\n",
-       "      <td>54.033581</td>\n",
-       "      <td>52.288934</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Propriva</th>\n",
-       "      <td>52.322552</td>\n",
-       "      <td>50.854632</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Ramicane</th>\n",
-       "      <td>40.216745</td>\n",
-       "      <td>40.673236</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Stelasyn</th>\n",
-       "      <td>54.233149</td>\n",
-       "      <td>52.431737</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>Zoniferol</th>\n",
-       "      <td>53.236507</td>\n",
-       "      <td>51.818479</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "                   mean     median\n",
-       "Drug Regimen                      \n",
-       "Capomulin     40.675741  41.557809\n",
-       "Ceftamin      52.591172  51.776157\n",
-       "Infubinol     52.884795  51.820584\n",
-       "Ketapril      55.235638  53.698743\n",
-       "Naftisol      54.331565  52.509285\n",
-       "Placebo       54.033581  52.288934\n",
-       "Propriva      52.322552  50.854632\n",
-       "Ramicane      40.216745  40.673236\n",
-       "Stelasyn      54.233149  52.431737\n",
-       "Zoniferol     53.236507  51.818479"
-      ]
-     },
-     "execution_count": 53,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Generate a summary statistics table of mean, median, variance, standard deviation, and SEM of the tumor volume for each regimen\n",
-    "study_df[[\"Drug Regimen\", \"Tumor Volume (mm3)\"]].head()\n",
-    "tvol_summary = study_df.groupby(\"Drug Regimen\").agg([\"mean\", \"median\", \"var\", \"std\", \"sem\"])[\"Tumor Volume (mm3)\"]\n",
-    "# median = study_df.groupby(\"Drug Regimen\").agg(\"median\")[\"Tumor Volume (mm3)\"]\n",
-    "# variance = study_df.groupby(\"Drug Regimen\").agg(\"var\")[\"Tumor Volume (mm3)\"]\n",
-    "# st_dev = study_df.groupby(\"Drug Regimen\").agg(\"std\")[\"Tumor Volume (mm3)\"]\n",
-    "# sem = study_df.groupby(\"Drug Regimen\").agg(\"sem\")[\"Tumor Volume (mm3)\"]\n",
-    "# sem\n",
-    "tvol_summary\n",
+    "\n",
     "\n",
     "# This method is the most straighforward, creating multiple series and putting them all together at the end.\n"
    ]
